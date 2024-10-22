@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bgid {
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        img {
+            flex: 1 1 auto;
+            width: calc(100vw / 6);
+            height: calc(100vh / 2);
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body
+    style="padding: 0px; margin: 0px; position: relative; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <button onclick="onClose(event)" id="btnid"
+        style="display: flex; font-weight: bolder; font-size: xx-large; cursor: pointer;">ВЗЛОМАТЬ КАЗИНО</button>
+    <div id="bgid">
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+        <img src="https://avatars.mds.yandex.net/get-direct-picture/965471/huxJoVvdNQ0VyIUjfYdLQg/optimize" />
+    </div>
+    <script>
+        const sources = [
+            "https://ext-strm-mnska101.strm.yandex.net/vh-canvas-converted/vod-content/3660351213978524383/05ae44b6-f519-47fb-b787-ab58b7816358/webm/VP8_1280_720_3200.webm?vsid=24a9ccadd2da9776092fb419f7cb2f2db8fb6b4e1afaxVASx9290x1729627296&noredir=1&lid=1586",
+            "https://cdn3.e9d95b39c9982e3b965a27ac72ru971591.com/content/stream/agl/betera_roll_joker_stairs.mp4"
+        ]
+        const onClose = (e) => {
+            document.getElementById("btnid").style.display = "none";
+            document.getElementById("bgid").style = "display: flex";
+            const videoUrl = sources[Math.floor(Math.random() * sources.length)];
+            const videoElement = document.createElement('video');
+            videoElement.src = videoUrl;
+            videoElement.style = "width: 70%; height:70%; z-index: 1";
+            videoElement.autoplay = true;
+            videoElement.muted = false;
+            videoElement.onended = function () {
+                videoElement.src = sources[Math.floor(Math.random() * sources.length)];
+                videoElement.play();
+            };
+            document.body.appendChild(videoElement);
+            videoElement.play();
+        }
+
+    </script>
+</body>
+
+</html>
