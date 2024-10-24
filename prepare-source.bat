@@ -17,7 +17,7 @@ for %%f in ("%source_dir%\*") do (
         echo !line! | findstr /r /c:"const max = [0-9]*;" >nul
         if !errorlevel! == 0 (
             setlocal enabledelayedexpansion
-            endlocal & set "line=const max = !counter!"
+            endlocal & set "line=const max = !counter!;"
         )
         echo !line!
     )
